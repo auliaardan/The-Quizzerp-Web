@@ -1,33 +1,43 @@
 var ExcelToJSON = function() {
 
-      this.parseExcel = function(file) {
+    this.parseExcel = function(file) {
         var reader = new FileReader();
 
         reader.onload = function(e) {
-          var data = e.target.result;
-          var workbook = XLSX.read(data, {
-            type: 'binary'
-          });
-          workbook.SheetNames.forEach(function(sheetName) {
-            // Here is your object
-            var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-            var json_object = JSON.stringify(XL_row_object);
-            console.log(JSON.parse(json_object));
-            jQuery( '#xlx_json' ).val( json_object );
-          })
+            var data = e.target.result;
+            var workbook = XLSX.read(data, {
+                type: 'binary'
+            });
+            workbook.SheetNames.forEach(function(sheetName) {
+                // Here is your object
+                var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                var json_object = JSON.stringify(XL_row_object);
+                window.json_topy = json_object;
+                console.log(JSON.parse(json_object));
+                jQuery( '#xlx_json' ).val( json_object );
+            })
         };
 
         reader.onerror = function(ex) {
-          console.log(ex);
+            console.log(ex);
         };
 
         reader.readAsBinaryString(file);
-      };
-  };
+    };
+};
 
-  function handleFileSelect(evt) {
+function handleFileSelect(evt) {
 
     var files = evt.target.files; // FileList object
     var xl2json = new ExcelToJSON();
     xl2json.parseExcel(files[0]);
-  }
+}
+
+function buttonSwitcher(el_id) {
+    var x = document.getElementById(el_id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

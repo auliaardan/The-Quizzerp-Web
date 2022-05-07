@@ -16,28 +16,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
 </head>
 <body>
-<h1 id="demo"></h1>
-<script type="text/javascript">
-    window.asu = 'Hello';
-    window.whatishis = 'Hello';
-</script>
-<py-script>
-from js import asu
-asu = 'Watafak'
-</py-script>
-<script>
-        document.getElementById("demo").innerHTML = window.asu;
+<!--
+<form enctype="multipart/form-data">
+    <input id="upload" type=file  name="files[]" accept=".xlsx,.xls,.csv">
+</form>
 
-</script>
+    <textarea class="form-control" rows=35 cols=120 id="xlx_json"></textarea>
+
+    <script>
+        document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+
+    </script>
+-->
+
 <h1>The Quizzerp</h1>
 <h3>By MomaBobaStudio</h3>
-<br>
+<button onclick="buttonSwitcher('myDIV')">Click Me</button>
+
+<div id="myDIV" style="display: none">
+    <form enctype="multipart/form-data">
+        <input id="upload" type=file  name="files[]" accept=".xlsx,.xls,.csv">
+    </form>
+
+    <textarea class="form-control" rows=35 cols=120 id="xlx_json"></textarea>
+
+    <script>
+        document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+
+    </script>
+</div>
+
 <br>
 <button>Start</button>
 
-<py-script>
-
-</py-script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
