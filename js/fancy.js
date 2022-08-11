@@ -1,3 +1,4 @@
+//similar to type() python
 var trueTypeOf = (obj) => Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
 
 var ExcelToJSON = function() {
@@ -14,11 +15,14 @@ var ExcelToJSON = function() {
                 // Here is your object
                 var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
                 var json_object = JSON.stringify(XL_row_object);
-                var json_temp = JSON.parse(json_object);
-                var shuffed = shuffle(json_temp);
-                console.log(JSON.parse(json_object));
-                console.log(shuffed[0])
-                jQuery( '#xlx_json' ).val( JSON.stringify(shuffed) );
+                var quiz_shuffed = shuffle(JSON.parse(json_object));
+                if(quiz_shuffed.length > 0) {
+                    $('#start-quiz').prop('disabled', false);
+                    var quiz_info = `Total Questions = ${quiz_shuffed.length}`;
+                }
+                else
+                    return
+                jQuery( '#quiz-info' ).val(quiz_info);
             })
         };
 
