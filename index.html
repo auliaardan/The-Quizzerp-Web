@@ -26,7 +26,7 @@
     <div id="homepage" class="activity-box">
         <div class="d-flex justify-content-center">
             <button type="button" class="btn btn-success btn-lg button-start " onclick="buttonSwitcher('quizupload')">
-                START
+                GET STARTED
             </button>
         </div>
 
@@ -47,20 +47,22 @@
 </div>
 
 <div id="question-answer" class="container-md pt-5 activity-box" style="display: none">
-    <div class="row justify-content-center align-items-center ">
-        <div class="col-sm">Question No / Answer</div>
+    <div class="d-flex flex-column border border-secondary rounded bg-light">
+        <div id="qa-header" class="px-3 pt-3">Question No / Answer</div>
+        <div id="qa-body" class="d-flex justify-content-center my-5"> This contains the question</div>
     </div>
 
-    <div class="row justify-content-center align-items-center">
-        <div class="col-sm"> This contains the question</div>
-    </div>
-
-    <div class="row justify-content-center align-items-center">
-        <div class="col-sm bg-secondary"> Check answer</div>
-        <div class="col-sm offset-md-2 bg-success"> Yes</div>
-        <div class="col-sm offset-md-2 bg-danger"> No</div>
+    <div class="d-flex flex-column justify-content-center mt-4">
+        <div id="answer-decor" class="d-flex p-2 justify-content-center" style="display: none !important;">Did you get it correct?
+        </div>
+        <div class="d-flex flex-row justify-content-center mt-4">
+            <div id="check-answer" class="btn p-2 bg-secondary"> Check answer</div>
+            <div id="answer-yes" class="p-2 bg-success" style="display: none"> Yes</div>
+            <div id="answer-no" class="p-2 bg-danger" style="display: none"> No</div>
+        </div>
     </div>
 </div>
+
 
 <div id="result-box" class="container-md pt-5 my-5" style="display: none">
     <div class="row justify-content-center align-items-center">

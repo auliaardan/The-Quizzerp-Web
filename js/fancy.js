@@ -71,9 +71,54 @@ function shuffle(array) {
 
 function startQuiz(data) {
     let correctAnswer = 0;
+    let index = 0;
     let quizQuestions = data;
+    const header = $('#qa-header');
+    const body = $('#qa-body');
+    const btn_checkAnswer = document.getElementById('check-answer');
+    const btn_answerYes = document.getElementById('answer-yes');
+    const btn_answerNo = document.getElementById('answer-no');
+
     buttonSwitcher('homepage');
     buttonSwitcher('question-answer');
 
+    function loadQuestion() {
+        if (index < quizQuestions.length) {
+            let currQuestion = quizQuestions.pop();
+            header.text(`Question number: ${currQuestion.No}`);
+            body.text(currQuestion.Question);
+
+            btn_checkAnswer.onclick = () => {
+                body.text(`${currQuestion.Answer}`);
+                buttonSwitcher('answer-decor');
+                buttonSwitcher('check-answer');
+                buttonSwitcher('answer-yes');
+                buttonSwitcher('answer-no');
+            }
+
+            btn_answerYes.onclick = () => {
+                correctAnswer++;
+                buttonSwitcher('answer-decor');
+                buttonSwitcher('check-answer');
+                buttonSwitcher('answer-yes');
+                buttonSwitcher('answer-no');
+                loadQuestion();
+            }
+
+            btn_answerNo.onclick = () => {
+                buttonSwitcher('answer-decor');
+                buttonSwitcher('check-answer');
+                buttonSwitcher('answer-yes');
+                buttonSwitcher('answer-no');
+                loadQuestion();
+            }
+        }
+        else{
+            buttonSwitcher('question-answer');
+
+        }
+    }
+    loadQuestion();
 }
+
 
