@@ -22,27 +22,31 @@
 <div class="container-md pt-5 my-5 ">
     <h1 class="d-flex justify-content-center">The Quizzerp</h1>
     <h3 class="d-flex justify-content-center mt-1">By MomaBobaStudio</h3>
-    <div class="d-flex justify-content-center" style="margin-top: 200px">
-        <button type="button" class="btn btn-success btn-lg button-start " onclick="buttonSwitcher('quizupload')">
-            START
-        </button>
-    </div>
+
+    <div id="homepage" class="activity-box">
+        <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-success btn-lg button-start " onclick="buttonSwitcher('quizupload')">
+                START
+            </button>
+        </div>
 
 
-    <div class="mt-3" id="quizupload">
-        <form class="d-flex justify-content-center" enctype="multipart/form-data">
-            <input id="upload" type=file class="btn btn-primary " name="files[]" accept=".xlsx,.xls,.csv">
-        </form>
-        <input id="quiz-info" type="text" class="form-control" rows="5" cols="5" placeholder="Quiz info here" readonly>
-        <button id="start-quiz" type="button" class="btn btn-outline-success" disabled>Start Quiz!</button>
-        <script>
-            document.getElementById('upload').addEventListener('change', handleFileSelect, false);
-            document.getElementById("start-quiz").addEventListener('startQuiz', startQuiz);
-        </script>
+        <div class="mt-3" id="quizupload" style="display: none">
+            <form class="d-flex justify-content-center" enctype="multipart/form-data">
+                <input id="upload" type=file class="btn btn-primary " name="files[]" accept=".xlsx,.xls,.csv">
+            </form>
+            <input id="quiz-info" type="text" class="form-control" rows="5" cols="5" placeholder="Quiz info here"
+                   readonly>
+            <button id="start-quiz" type="button" class="btn btn-outline-success" disabled>Start Quiz!</button>
+            <script>
+                document.getElementById('upload').addEventListener('change', handleFileSelect, false);
+                document.getElementById("start-quiz").addEventListener('startQuiz', startQuiz);
+            </script>
+        </div>
     </div>
 </div>
 
-<div id="question-answer" class="container-md pt-5 my-5" style="display: none">
+<div id="question-answer" class="container-md pt-5 activity-box" style="display: none">
     <div class="row justify-content-center align-items-center ">
         <div class="col-sm">Question No / Answer</div>
     </div>

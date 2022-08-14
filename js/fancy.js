@@ -2,7 +2,7 @@
 var trueTypeOf = (obj) => Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
 
 var ExcelToJSON = function () {
-
+    const btn_startQuiz = document.getElementById('start-quiz')
     this.parseExcel = function (file) {
         var reader = new FileReader();
 
@@ -22,7 +22,9 @@ var ExcelToJSON = function () {
                 } else
                     return
                 jQuery('#quiz-info').val(quiz_info);
-                startQuiz(quiz_shuffed);
+                btn_startQuiz.onclick = () => {
+                    startQuiz(quiz_shuffed)
+                }
             })
         };
 
@@ -33,7 +35,6 @@ var ExcelToJSON = function () {
         reader.readAsBinaryString(file);
     };
 };
-
 
 
 function handleFileSelect(evt) {
@@ -69,9 +70,10 @@ function shuffle(array) {
 }
 
 function startQuiz(data) {
-    
-    while (true){
+    let correctAnswer = 0;
+    let quizQuestions = data;
+    buttonSwitcher('homepage');
+    buttonSwitcher('question-answer');
 
-    }
 }
 
