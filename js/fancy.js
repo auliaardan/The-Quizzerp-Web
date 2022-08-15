@@ -70,9 +70,13 @@ function shuffle(array) {
 }
 
 function startQuiz(data) {
+    //FuncVar
     let correctAnswer = 0;
+    let wrongAnswers = []
     let index = 0;
     let quizQuestions = data;
+
+    //DocVar
     const header = $('#qa-header');
     const body = $('#qa-body');
     const btn_checkAnswer = document.getElementById('check-answer');
@@ -106,19 +110,23 @@ function startQuiz(data) {
             }
 
             btn_answerNo.onclick = () => {
+                wrongAnswers.push(currQuestion);
                 buttonSwitcher('answer-decor');
                 buttonSwitcher('check-answer');
                 buttonSwitcher('answer-yes');
                 buttonSwitcher('answer-no');
                 loadQuestion();
             }
-        }
-        else{
+        } else {
             buttonSwitcher('question-answer');
-
+            buttonSwitcher('result-box');
+            endQuiz(wrongAnswers);
         }
     }
     loadQuestion();
 }
 
+function endQuiz(wrongAnswerData){
+
+}
 
