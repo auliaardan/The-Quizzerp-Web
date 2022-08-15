@@ -23,7 +23,7 @@
     <h1 class="d-flex justify-content-center">The Quizzerp</h1>
     <h3 class="d-flex justify-content-center mt-1">By MomaBobaStudio</h3>
 
-    <div id="homepage" class="activity-box">
+    <div id="homepage" class="activity-box-start">
         <div class="d-flex justify-content-center">
             <button type="button" class="btn btn-success btn-lg button-start " onclick="buttonSwitcher('quizupload')">
                 GET STARTED
@@ -53,35 +53,31 @@
     </div>
 
     <div class="d-flex flex-column justify-content-center mt-4">
-        <div id="answer-decor" class="d-flex p-2 justify-content-center" style="display: none !important;">Did you get it correct?
+        <div id="answer-decor" class="d-flex p-2 justify-content-center">
         </div>
         <div class="d-flex flex-row justify-content-center mt-4">
-            <div id="check-answer" class="btn p-2 bg-secondary"> Check answer</div>
-            <div id="answer-yes" class="p-2 bg-success" style="display: none"> Yes</div>
-            <div id="answer-no" class="p-2 bg-danger" style="display: none"> No</div>
+            <div id="check-answer" class="btn p-2 btn-secondary"> Check answer</div>
+            <div id="answer-yes" class="btn mx-2 button-checkAnswer btn-success" style="display: none"> Yes</div>
+            <div id="answer-no" class="btn mx-2 button-checkAnswer btn-danger" style="display: none"> No</div>
         </div>
     </div>
 </div>
 
 
-<div id="result-box" class="container-md pt-5 my-5" style="display: none">
-    <div class="row justify-content-center align-items-center">
-        <div class="col-sm"> Congratulations ! / Try Again</div>
-    </div>
-
-    <div class="row justify-content-center align-items-center ">
-        <div class="col-sm"> Image here</div>
-    </div>
-
-    <div class="row justify-content-center align-items-center">
-        <div class="col-sm"> You Scored XX%
-            Wrong answers:
+<div id="result-box" class="container-md pt-5 result-box" style="display: none">
+    <div class="d-flex flex-column justify-content-center">
+        <div class="d-flex flex-row justify-content-center imageResultBox">
+            <img src="/images/img_quotes.png" class=" img-fluid rounded" alt="You have finished ! Never Stop Learning!">
+        </div>
+        <div id="result-score" class="d-flex justify-content-center my-2"> You Scored XX%
+        </div>
+        <div id="result-wrongs" class="d-flex justify-content-center my-2"> Wrong Answers:
+        </div>
+        <div class="d-flex flex-row justify-content-center my-4">
+            <div id="mainmenu-button" class="btn button-start btn-primary">MAIN MENU</div>
         </div>
     </div>
-
-    <div class="row justify-content-center align-items-center ">
-        <div class="col-sm"> Start again</div>
-    </div>
 </div>
+
 </body>
 </html>

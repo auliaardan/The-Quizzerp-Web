@@ -75,6 +75,7 @@ function startQuiz(data) {
     let wrongAnswers = []
     let index = 0;
     let quizQuestions = data;
+    let quizLength = quizQuestions.length;
 
     //DocVar
     const header = $('#qa-header');
@@ -82,6 +83,7 @@ function startQuiz(data) {
     const btn_checkAnswer = document.getElementById('check-answer');
     const btn_answerYes = document.getElementById('answer-yes');
     const btn_answerNo = document.getElementById('answer-no');
+    const answerDecor = document.getElementById('answer-decor');
 
     buttonSwitcher('homepage');
     buttonSwitcher('question-answer');
@@ -93,7 +95,7 @@ function startQuiz(data) {
             body.text(currQuestion.Question);
 
             btn_checkAnswer.onclick = () => {
-                body.text(`${currQuestion.Answer}`);
+                answerDecor.innerHTML = "Did you get it correct?";
                 buttonSwitcher('answer-decor');
                 buttonSwitcher('check-answer');
                 buttonSwitcher('answer-yes');
@@ -102,7 +104,7 @@ function startQuiz(data) {
 
             btn_answerYes.onclick = () => {
                 correctAnswer++;
-                buttonSwitcher('answer-decor');
+                answerDecor.innerHTML = "";
                 buttonSwitcher('check-answer');
                 buttonSwitcher('answer-yes');
                 buttonSwitcher('answer-no');
@@ -111,7 +113,7 @@ function startQuiz(data) {
 
             btn_answerNo.onclick = () => {
                 wrongAnswers.push(currQuestion);
-                buttonSwitcher('answer-decor');
+                answerDecor.innerHTML = "";
                 buttonSwitcher('check-answer');
                 buttonSwitcher('answer-yes');
                 buttonSwitcher('answer-no');
@@ -120,13 +122,35 @@ function startQuiz(data) {
         } else {
             buttonSwitcher('question-answer');
             buttonSwitcher('result-box');
-            endQuiz(wrongAnswers);
+            endQuiz(correctAnswer, wrongAnswers, quizLength);
         }
     }
+
     loadQuestion();
 }
 
-function endQuiz(wrongAnswerData){
+function endQuiz(correctAnswerData, wrongAnswerData, questionLength) {
+    //FuncVar
+    let correctAnswer = correctAnswerData;
+    let wrongAnswers = wrongAnswerData;
+    let totalQuestion = questionLength;
 
+    //DocVar
+    const scoreText = $('#result-score');
+    const wrongText = document.getElementById('result-wrongs');
+    const btn_home = document.getElementById('mainmenu-button');
+
+    wrongText.innerText = "Wrong Answers: ";
+    scoreText.text(`You scored ${correctAnswer}/${totalQuestion}`)
+    for (let i = 0; i < wrongAnswers.length; i++) {
+        wrongText.textContent += wrongAnswers[i].No;
+        wrongText.textContent += ", ";
+    }
+
+    btn_home.onclick = () => {
+        buttonSwitcher('result-box');
+        buttonSwitcher('homepage');
+        buttonSwitcher('quizupload');
+    }
 }
 
