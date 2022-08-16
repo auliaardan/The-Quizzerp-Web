@@ -96,6 +96,7 @@ function startQuiz(data) {
 
             btn_checkAnswer.onclick = () => {
                 answerDecor.innerHTML = "Did you get it correct?";
+                body.text(currQuestion.Answer);
                 buttonSwitcher('answer-decor');
                 buttonSwitcher('check-answer');
                 buttonSwitcher('answer-yes');
