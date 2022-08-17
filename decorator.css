@@ -5,6 +5,14 @@
     font-weight: bold;
 }
 
+body{
+    background-image: url("/images/Bg.png");
+    background-color: #1C3879;
+    background-repeat: no-repeat;
+    position: center;
+    background-size: cover;
+}
+
 .button-checkAnswer {
     padding-left: 22px;
     padding-right: 22px;
