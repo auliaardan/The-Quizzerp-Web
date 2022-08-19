@@ -26,7 +26,11 @@
 img.btn-cover {
     height: 13em;
     width: auto;
-    display: inline-block;
+    display: inline;
+}
+
+img.btn-tutorial {
+
 }
 
 p.header {
@@ -59,10 +63,6 @@ body {
     padding-right: 22px;
     letter-spacing: 1px;
     font-weight: bold;
-}
-
-.quiz-upload-box {
-
 }
 
 .activity-box {
