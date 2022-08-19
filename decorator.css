@@ -14,14 +14,17 @@
 }
 
 .btn-centered-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 120%;
+    letter-spacing: 3px;
+    font-weight: bold;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-img.button-cover {
-    height: 1em;
+img.btn-cover {
+    height: 13em;
     width: auto;
     display: inline-block;
 }
@@ -45,7 +48,7 @@ p.body {
 }
 
 body {
-    background-image: url(/images/Bg.png);
+    background-image: url('/images/Bg.png');
     background-color: #1C3879;
     position: center;
     background-size: cover;
@@ -78,7 +81,11 @@ body {
     height: 400px;
 }
 
-@media (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
+    .btn-centered-text {
+        font-size: 110% !important;
+    }
+
     .imageResultBox {
         height: 350px;
     }
@@ -88,7 +95,11 @@ body {
     }
 }
 
-@media (max-width: 670px) {
+@media screen and (max-width: 670px) {
+    .btn-centered-text{
+        font-size: 100% !important;
+    }
+
     .imageResultBox {
         height: 250px;
     }
