@@ -2,6 +2,7 @@
 //font-family: "Comic Sans MS", cursive, sans-serif;
 var trueTypeOf = (obj) => Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
 
+
 var ExcelToJSON = function () {
     const btn_startQuiz = document.getElementById('start-quiz')
     this.parseExcel = function (file) {

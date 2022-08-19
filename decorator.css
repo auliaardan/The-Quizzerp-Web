@@ -48,7 +48,7 @@ p.body {
 }
 
 body {
-    background-image: url('/images/Bg.png');
+    background-image: url("https://raw.githubusercontent.com/auliaardan/The-Quizzerp-Web/main/images/Bg.png");
     background-color: #1C3879;
     position: center;
     background-size: cover;
@@ -96,7 +96,7 @@ body {
 }
 
 @media screen and (max-width: 670px) {
-    .btn-centered-text{
+    .btn-centered-text {
         font-size: 100% !important;
     }
 
