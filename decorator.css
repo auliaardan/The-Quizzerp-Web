@@ -2,10 +2,28 @@
     font-family: "Times New Roman", Times, serif;
 }
 
-.main-frame{
+.main-frame {
     background-color: #F9F5EB;
     box-shadow: 0px -30px 0px 20px rgba(234, 227, 210, 0.5);
     margin-top: 150px;
+}
+
+.button-container {
+    position: relative;
+    text-align: center;
+}
+
+.btn-centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img.button-cover {
+    height: 1em;
+    width: auto;
+    display: inline-block;
 }
 
 p.header {
@@ -14,7 +32,7 @@ p.header {
     text-align: center;
 }
 
-p.body{
+p.body {
     font-size: 12px;
     text-align: center;
 }
