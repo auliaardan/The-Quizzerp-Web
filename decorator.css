@@ -45,7 +45,7 @@ p.body {
 }
 
 body {
-    background-image: url("/images/Bg.png");
+    background-image: url(/images/Bg.png);
     background-color: #1C3879;
     position: center;
     background-size: cover;
