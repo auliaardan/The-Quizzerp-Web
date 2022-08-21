@@ -8,8 +8,19 @@
     margin-top: 150px;
 }
 
+div.frames {
+    width: 33%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+div.frames.tutorial-text-bar {
+    z-index: 1;
+}
+
 .button-container {
     position: relative;
+    float: left;
     text-align: center;
 }
 
@@ -18,16 +29,37 @@
     font-size: 120%;
     letter-spacing: 3px;
     font-weight: bold;
+    color: white;
     top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+img.btn-tutorial {
+    height: 15%;
+    width: 15%;
 }
 
 img.btn-cover {
     height: 13em;
     width: auto;
     display: inline;
-    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img.btn-cover.logo-bg {
+    height: 22em !important;
+}
+
+img.logo {
+    width: 100%;
+}
+
+.title {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 p.header {
