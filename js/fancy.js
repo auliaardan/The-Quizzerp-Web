@@ -159,7 +159,8 @@ function tutorialChanger(btnID) {
             textHeader.innerText = "Step 1: Creating your excel file";
             textBody.innerHTML = "To get started, create an XLSX/XLS file from your favourite spreadsheet application." +
                 "Create the first row with No | Question | Answer | Source (exact spelling and Capitalization) " +
-                "Start filling in with questions and answers! <a href='https://bit.ly/QuizzerpExample'>Example</a>";
+                "Start filling in with questions and answers! <a href='https://bit.ly/QuizzerpExample'>Example</a>" +
+                "\n ,<a href='https://youtu.be/1wCuqWsZFXM'>Video Tutorial</a>";
             break
         case 2:
             textHeader.innerText = "Step 2: Download your file to local device";
