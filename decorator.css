@@ -58,6 +58,7 @@ div.frames.tutorial-text-bar {
 img.btn-tutorial {
     height: 15%;
     width: 15%;
+    cursor: pointer;
 }
 
 img.btn-cover {
@@ -143,6 +144,11 @@ body {
 }
 
 @media screen and (max-width: 670px) {
+    img.btn-tutorial {
+        height: 25%;
+        width: 25%;
+    }
+
     .btn-centered-text {
         font-size: 100% !important;
     }

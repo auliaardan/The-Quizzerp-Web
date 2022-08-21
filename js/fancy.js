@@ -1,8 +1,3 @@
-//similar to type() python
-//font-family: "Comic Sans MS", cursive, sans-serif;
-var trueTypeOf = (obj) => Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
-
-
 var ExcelToJSON = function () {
     const btn_startQuiz = document.getElementById('start-quiz')
     this.parseExcel = function (file) {
@@ -21,8 +16,7 @@ var ExcelToJSON = function () {
                 if (quiz_shuffed.length > 0) {
                     $('#start-quiz').prop('disabled', false);
                     var quiz_info = `Total Questions = ${quiz_shuffed.length}`;
-                } else
-                    return
+                } else return
                 jQuery('#quiz-info').val(quiz_info);
                 btn_startQuiz.onclick = () => {
                     startQuiz(quiz_shuffed)
@@ -64,8 +58,7 @@ function shuffle(array) {
         currentIndex--;
 
         // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
 
     return array;
@@ -157,21 +150,39 @@ function endQuiz(correctAnswerData, wrongAnswerData, questionLength) {
     }
 }
 
-function tutorialChanger (btnID){
-    switch (btnID){
-        case 1:
+function tutorialChanger(btnID) {
+    const textHeader = document.getElementById('tutorial-text-header');
+    const textBody = document.getElementById('tutorial-text-body');
 
+    switch (btnID) {
+        case 1:
+            textHeader.innerText = "Step 1: Creating your excel file";
+            textBody.innerHTML = "To get started, create an XLSX/XLS file from your favourite spreadsheet application." +
+                "Create the first row with No | Question | Answer | Source (exact spelling and Capitalization) " +
+                "Start filling in with questions and answers! <a href='https://bit.ly/QuizzerpExample'>Example</a>";
             break
         case 2:
-
+            textHeader.innerText = "Step 2: Download your file to local device";
+            textBody.innerHTML = "Prepare your \"Knowledge-Filled\" excel file. Fill them up with important subjects " +
+                "and those pesky hard concepts that you have to memorize. When you are ready to test yourself, download " +
+                "file to your local device and click the \"Get Started\" button";
             break
         case 3:
-
+            textHeader.innerText = "Step 3: Start Quizzerping!";
+            textBody.innerHTML = "Quiz yourself, ONLY check answer if you have attempted to answer your question. " +
+                "After checking the answer, be honest with yourself. Did you answer it correctly or not? This application " +
+                "will record the wrong answers and display which questions were incorrect. Keep trying and do your best!"
             break
         case 4:
+            textHeader.innerText = "Step 4: Share your quizzerp!";
+            textBody.innerHTML = "The beauty of studying is that you can do it together! Quizzerp with your friends, or " +
+                "share your excel file with your friends and let them study along. The boundaries are limitless. " +
+                "Remember, studying is a process, and everyone has their own pace :)";
 
             break
-        case 5:
+        case 5:textHeader.innerText = "Credits";
+            textBody.innerHTML = "For further contact/bug report: <a href='https://www.linkedin.com/in/aulia-rahman-ardan/'> LinkedIn</a>" +
+                "\n Check out my other apps: <a href='https://linktr.ee/InspiredByArdan'>Projects</a>"
 
             break
         default:
