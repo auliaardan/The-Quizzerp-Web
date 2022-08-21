@@ -27,10 +27,7 @@ img.btn-cover {
     height: 13em;
     width: auto;
     display: inline;
-}
-
-img.btn-tutorial {
-
+    margin: 0;
 }
 
 p.header {
