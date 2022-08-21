@@ -8,10 +8,18 @@
     margin-top: 150px;
 }
 
+div.c-flex {
+    display: flex;
+    flex-wrap: wrap !important;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
 div.frames {
-    width: 33%;
+    flex: 33%;
     margin-top: 10%;
     margin-bottom: 10%;
+    padding: 10px;
 }
 
 div.frames.tutorial-text-bar {
@@ -98,6 +106,7 @@ body {
     margin-top: 175px;
 }
 
+
 .result-box {
     margin-top: 50px;
 }
@@ -129,6 +138,10 @@ body {
         font-size: 100% !important;
     }
 
+    img.btn-cover.logo-bg {
+        height: 15em !important;
+    }
+
     .imageResultBox {
         height: 250px;
     }
@@ -136,5 +149,22 @@ body {
     .activity-box-start {
         margin-top: 50%;
     }
+
+    div.c-flex {
+        flex-direction: column !important;
+    }
+
+    div.frames {
+        align-items: center;
+        flex: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .main-frame {
+        width: 75% !important;
+    }
+
+
 }
 

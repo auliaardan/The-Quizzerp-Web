@@ -157,6 +157,3 @@ function endQuiz(correctAnswerData, wrongAnswerData, questionLength) {
     }
 }
 
-//Create Logo
-const logo = document.createElement('div')
-
