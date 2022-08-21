@@ -140,9 +140,6 @@ body {
         height: 350px;
     }
 
-    .activity-box {
-        margin-top: 75px;
-    }
 }
 
 @media screen and (max-width: 670px) {
@@ -156,10 +153,6 @@ body {
 
     .imageResultBox {
         height: 250px;
-    }
-
-    .activity-box-start {
-        margin-top: 50%;
     }
 
     div.c-flex {
