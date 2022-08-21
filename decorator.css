@@ -15,6 +15,18 @@ div.c-flex {
     flex-direction: row;
 }
 
+.ordering.a {
+    order: 1;
+}
+
+.ordering.b {
+    order: 2;
+}
+
+.ordering.c {
+    order: 3;
+}
+
 div.frames {
     flex: 33%;
     margin-top: 10%;
@@ -103,7 +115,7 @@ body {
 }
 
 .activity-box {
-    margin-top: 175px;
+    margin-top: 0;
 }
 
 
@@ -165,6 +177,16 @@ body {
         width: 75% !important;
     }
 
+    .ordering.a {
+        order: 2;
+    }
 
+    .ordering.b {
+        order: 1;
+    }
+
+    .ordering.c {
+        order: 3;
+    }
 }
 
