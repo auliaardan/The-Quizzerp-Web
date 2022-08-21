@@ -20,16 +20,11 @@
 </head>
 <body>
 <div class="container-md py-5 mx-auto main-frame rounded">
-    <div id="tittle-header" style="display: none">
-        <h1 class="d-flex justify-content-center title">The Quizzerp</h1>
-        <h3 class="d-flex justify-content-center mt-1">By MomaBobaStudio</h3>
-    </div>
-
     <div id="homepage" class="">
         <div class="c-flex">
             <div class="frames tutorial-text-bar ordering a">
-                <p class="header">Learn smarter with the best partner</p>
-                <p class="body">The best partner to re-test concepts, formulas, and revise important subjects all in one
+                <p id="tutorial-text-header" class="header">Learn smarter with the best partner</p>
+                <p id="tutorial-text-body" class="body">The best partner to re-test concepts, formulas, and revise important subjects all in one
                     place.
                     Multi-platform, no download required, and 100% Free. Create your quiz, download, and test yourself
                     right
@@ -64,7 +59,7 @@
         </div>
 
         <div class="d-flex justify-content-center my-3">
-            <button type="button" class="btn btn-success btn-lg button-start " onclick="buttonSwitcher('quizupload')">
+            <button type="button" class="btn btn-success btn-lg button-start " style="position: relative; z-index: 1" onclick="buttonSwitcher('quizupload')">
                 GET STARTED
             </button>
         </div>
